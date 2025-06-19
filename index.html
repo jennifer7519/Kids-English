@@ -501,6 +501,18 @@
                 { word: "bag", meaning: "가방 🎒", options: ["상자 📦", "병 🍼", "컵 🥤", "가방 🎒"], correct: 3 },
                 { word: "sun", meaning: "태양 ☀️", options: ["태양 ☀️", "달 🌙", "별 ⭐", "구름 ☁️"], correct: 0 }
             ],
+                // 🌤️ 초급용 - 날씨 단어들 (기존 초급 단어 뒤에 추가)
+{ word: "sunny", meaning: "맑은 ☀️", options: ["흐린 ☁️", "비오는 🌧️", "맑은 ☀️", "눈오는 ❄️"], correct: 2 },
+{ word: "rainy", meaning: "비오는 🌧️", options: ["맑은 ☀️", "비오는 🌧️", "바람부는 💨", "흐린 ☁️"], correct: 1 },
+{ word: "cloudy", meaning: "흐린 ☁️", options: ["눈오는 ❄️", "맑은 ☀️", "흐린 ☁️", "비오는 🌧️"], correct: 2 },
+{ word: "snowy", meaning: "눈오는 ❄️", options: ["비오는 🌧️", "바람부는 💨", "맑은 ☀️", "눈오는 ❄️"], correct: 3 },
+{ word: "windy", meaning: "바람부는 💨", options: ["바람부는 💨", "조용한 🤫", "흐린 ☁️", "맑은 ☀️"], correct: 0 },
+{ word: "hot", meaning: "더운 🔥", options: ["차가운 🧊", "더운 🔥", "따뜻한 🌡️", "시원한 😎"], correct: 1 },
+{ word: "cold", meaning: "추운 🧊", options: ["따뜻한 🌡️", "더운 🔥", "추운 🧊", "시원한 😎"], correct: 2 },
+{ word: "warm", meaning: "따뜻한 🌡️", options: ["시원한 😎", "추운 🧊", "더운 🔥", "따뜻한 🌡️"], correct: 3 },
+{ word: "cool", meaning: "시원한 😎", options: ["시원한 😎", "따뜻한 🌡️", "더운 🔥", "추운 🧊"], correct: 0 },
+{ word: "storm", meaning: "폭풍 ⛈️", options: ["고요함 🌙", "폭풍 ⛈️", "무지개 🌈", "안개 🌫️"], correct: 1 },
+
             
             intermediate: [
                 // 음식 (10개)
@@ -561,7 +573,29 @@
                 { word: "drink", meaning: "마시다 🥤", options: ["마시다 🥤", "삼키다 😋", "씹다 😋", "맛보다 👅"], correct: 0 },
                 { word: "play", meaning: "놀다 🎮", options: ["공부하다 📚", "놀다 🎮", "일하다 💼", "쉬다 😴"], correct: 1 },
                 { word: "study", meaning: "공부하다 📚", options: ["놀다 🎮", "자다 😴", "공부하다 📚", "운동하다 🏃"], correct: 2 },
-                { word: "swim", meaning: "수영하다 🏊", options: ["달리다 🏃", "뛰다 🦘", "춤추다 💃", "수영하다 🏊"], correct: 3 }
+                { word: "swim", meaning: "수영하다 🏊", options: ["달리다 🏃", "뛰다 🦘", "춤추다 💃", "수영하다 🏊"], correct: 3 }, 
+            { word: "happy", meaning: "행복한 😊", options: ["슬픈 😢", "행복한 😊", "화난 😠", "무서운 😱"], correct: 1 },
+{ word: "sad", meaning: "슬픈 😢", options: ["기쁜 😄", "화난 😠", "슬픈 😢", "놀란 😲"], correct: 2 },
+{ word: "angry", meaning: "화난 😠", options: ["행복한 😊", "평온한 😌", "무서운 😱", "화난 😠"], correct: 3 },
+{ word: "excited", meaning: "신난 🤗", options: ["신난 🤗", "지친 😴", "슬픈 😢", "무서운 😱"], correct: 0 },
+{ word: "scared", meaning: "무서운 😱", options: ["용감한 💪", "무서운 😱", "행복한 😊", "평온한 😌"], correct: 1 },
+{ word: "surprised", meaning: "놀란 😲", options: ["예상한 🤔", "지루한 😪", "놀란 😲", "화난 😠"], correct: 2 },
+{ word: "tired", meaning: "피곤한 😴", options: ["활기찬 ⚡", "신난 🤗", "깨어있는 👀", "피곤한 😴"], correct: 3 },
+{ word: "worried", meaning: "걱정하는 😰", options: ["걱정하는 😰", "안심하는 😌", "기쁜 😄", "화난 😠"], correct: 0 },
+{ word: "proud", meaning: "자랑스러운 😤", options: ["부끄러운 😳", "자랑스러운 😤", "슬픈 😢", "무서운 😱"], correct: 1 },
+{ word: "nervous", meaning: "긴장한 😬", options: ["편안한 😌", "자신있는 💪", "긴장한 😬", "기쁜 😄"], correct: 2 },
+
+// 🌍 중급용 - 자연 단어들 (기존 중급 단어 뒤에 추가)
+{ word: "mountain", meaning: "산 ⛰️", options: ["바다 🌊", "강 🏞️", "산 ⛰️", "사막 🏜️"], correct: 2 },
+{ word: "river", meaning: "강 🏞️", options: ["호수 🏞️", "강 🏞️", "바다 🌊", "연못 🏞️"], correct: 1 },
+{ word: "ocean", meaning: "바다 🌊", options: ["강 🏞️", "호수 🏞️", "바다 🌊", "연못 🏞️"], correct: 2 },
+{ word: "forest", meaning: "숲 🌲", options: ["사막 🏜️", "초원 🌾", "산 ⛰️", "숲 🌲"], correct: 3 },
+{ word: "tree", meaning: "나무 🌳", options: ["나무 🌳", "꽃 🌸", "풀 🌿", "돌 🪨"], correct: 0 },
+{ word: "flower", meaning: "꽃 🌸", options: ["잎사귀 🍃", "꽃 🌸", "가지 🌿", "뿌리 🌱"], correct: 1 },
+{ word: "grass", meaning: "풀 🌿", options: ["모래 🏖️", "돌 🪨", "풀 🌿", "물 💧"], correct: 2 },
+{ word: "rock", meaning: "바위 🪨", options: ["흙 🌱", "모래 🏖️", "물 💧", "바위 🪨"], correct: 3 },
+{ word: "lake", meaning: "호수 🏞️", options: ["호수 🏞️", "강 🏞️", "바다 🌊", "연못 🏞️"], correct: 0 },
+{ word: "beach", meaning: "해변 🏖️", options: ["산 ⛰️", "해변 🏖️", "숲 🌲", "사막 🏜️"], correct: 1 }
             ]
         };
 
