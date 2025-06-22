@@ -13,12 +13,13 @@
 
         body {
             font-family: 'Comic Sans MS', cursive, Arial, sans-serif;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #333;
+            padding: 20px;
         }
 
         .quiz-container {
@@ -27,71 +28,26 @@
             padding: 30px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             max-width: 700px;
-            width: 90%;
+            width: 100%;
             text-align: center;
-            border: 3px solid #ff9a9e;
-        }
-
-        .quiz-header {
-            margin-bottom: 30px;
+            border: 3px solid #667eea;
         }
 
         .quiz-title {
-            font-size: 2.8em;
-            color: #ff6b9d;
-            margin-bottom: 15px;
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
-        .progress-bar {
-            background: #f0f0f0;
-            height: 15px;
-            border-radius: 10px;
-            overflow: hidden;
-            margin: 20px 0;
-            border: 2px solid #ff9a9e;
-        }
-
-        .progress-fill {
-            background: linear-gradient(90deg, #ff9a9e, #fecfef);
-            height: 100%;
-            transition: width 0.5s ease;
-        }
-
-        .question-counter {
-            font-size: 1.3em;
+        .quiz-subtitle {
+            font-size: 1.2em;
             color: #666;
-            margin-bottom: 10px;
-            font-weight: bold;
+            margin-bottom: 30px;
+            line-height: 1.5;
         }
 
-        .score {
-            font-size: 1.4em;
-            color: #ff6b9d;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .difficulty-badge {
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .difficulty-beginner {
-            background: #4ecdc4;
-            color: white;
-        }
-
-        .difficulty-intermediate {
-            background: #45b7d1;
-            color: white;
-        }
-
-        .difficulty-selection {
+        .difficulty-section {
             margin: 30px 0;
         }
 
@@ -118,24 +74,27 @@
         }
 
         .difficulty-btn.selected {
-            border-color: #ff6b9d;
-            background: #fff5f8;
+            border-color: #667eea;
+            background: #f0f2ff;
         }
 
-        .difficulty-btn.beginner:hover,
         .difficulty-btn.beginner.selected {
             border-color: #4ecdc4;
             background: #f0fdfc;
         }
 
-        .difficulty-btn.intermediate:hover,
         .difficulty-btn.intermediate.selected {
             border-color: #45b7d1;
             background: #f0f9ff;
         }
 
-        .difficulty-title {
-            font-size: 1.5em;
+        .difficulty-btn.practical.selected {
+            border-color: #ff6b9d;
+            background: #fff0f5;
+        }
+
+        .difficulty-level {
+            font-size: 1.3em;
             font-weight: bold;
             margin-bottom: 10px;
         }
@@ -146,10 +105,83 @@
             line-height: 1.5;
         }
 
-        .difficulty-level {
+        .start-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            border-radius: 30px;
             font-size: 1.3em;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 20px 10px;
             font-weight: bold;
-            margin-bottom: 8px;
+        }
+
+        .start-btn:hover:not(:disabled) {
+            transform: scale(1.05);
+        }
+
+        .start-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .quiz-header {
+            margin-bottom: 30px;
+        }
+
+        .difficulty-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .difficulty-beginner {
+            background: #4ecdc4;
+        }
+
+        .difficulty-intermediate {
+            background: #45b7d1;
+        }
+
+        .difficulty-practical {
+            background: #ff6b9d;
+        }
+
+        .question-counter {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .progress-bar {
+            background: #f0f0f0;
+            height: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            border: 2px solid #667eea;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        .score {
+            font-size: 1.4em;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
 
         .question-section {
@@ -178,7 +210,7 @@
 
         .answer-btn {
             background: white;
-            border: 4px solid #ff9a9e;
+            border: 4px solid #667eea;
             padding: 18px 25px;
             border-radius: 15px;
             font-size: 1.2em;
@@ -188,7 +220,7 @@
         }
 
         .answer-btn:hover {
-            background: #ff9a9e;
+            background: #667eea;
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 8px 15px rgba(0,0,0,0.1);
@@ -226,7 +258,7 @@
         }
 
         .next-btn {
-            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             border: none;
             padding: 18px 35px;
@@ -241,56 +273,6 @@
 
         .next-btn:hover {
             transform: scale(1.05);
-        }
-
-        .start-screen, .result-screen, .vocabulary-screen {
-            text-align: center;
-        }
-
-        .start-btn, .restart-btn, .vocab-btn {
-            background: linear-gradient(135deg, #ff9a9e, #fecfef);
-            color: white;
-            border: none;
-            padding: 20px 40px;
-            border-radius: 30px;
-            font-size: 1.3em;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            margin: 10px;
-            font-weight: bold;
-        }
-
-        .start-btn:hover, .restart-btn:hover, .vocab-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .start-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .result-message {
-            font-size: 1.8em;
-            margin: 20px 0;
-            font-weight: bold;
-        }
-
-        .final-score {
-            font-size: 2.2em;
-            color: #ff6b9d;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .emoji {
-            font-size: 4em;
-            margin: 20px 0;
-            animation: bounce 1s ease infinite;
         }
 
         .back-btn {
@@ -309,6 +291,46 @@
             background: #7f8c8d;
         }
 
+        .result-message {
+            font-size: 1.8em;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .final-score {
+            font-size: 2.2em;
+            color: #667eea;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .emoji {
+            font-size: 4em;
+            margin: 20px 0;
+            animation: bounce 1s ease infinite;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .restart-btn, .vocab-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        .restart-btn:hover, .vocab-btn:hover {
+            transform: scale(1.05);
+        }
+
         .vocabulary-list {
             max-height: 400px;
             overflow-y: auto;
@@ -318,7 +340,7 @@
 
         .vocab-item {
             background: #f8f9fa;
-            border: 2px solid #ff9a9e;
+            border: 2px solid #667eea;
             border-radius: 10px;
             padding: 15px;
             margin: 10px 0;
@@ -327,13 +349,13 @@
 
         .vocab-item:hover {
             transform: translateX(5px);
-            background: #fff5f8;
+            background: #f0f2ff;
         }
 
         .vocab-word {
             font-size: 1.4em;
             font-weight: bold;
-            color: #ff6b9d;
+            color: #667eea;
             margin-bottom: 5px;
         }
 
@@ -344,9 +366,28 @@
 
         .vocab-header {
             font-size: 1.8em;
-            color: #ff6b9d;
+            color: #667eea;
             margin-bottom: 20px;
             font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .quiz-container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .quiz-title {
+                font-size: 2em;
+            }
+            
+            .difficulty-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .question {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
@@ -355,17 +396,16 @@
         <!-- 시작 화면 -->
         <div id="start-screen" class="start-screen">
             <h1 class="quiz-title">🌟 초등학생 영어 단어 퀴즈 🌟</h1>
-            <p style="font-size: 1.3em; margin: 20px 0; color: #666; line-height: 1.5;">
+            <p class="quiz-subtitle">
                 🎯 재미있게 영어 단어를 배워보자! 🎯<br>
                 난이도를 선택하고 10문제를 풀어보세요! 💪
             </p>
             
-            <div class="difficulty-selection">
+            <div class="difficulty-section">
                 <h3 style="margin-bottom: 25px; color: #333; font-size: 1.4em;">🎮 난이도를 선택해주세요! 🎮</h3>
                 <div class="difficulty-buttons">
                     <div class="difficulty-btn beginner" onclick="selectDifficulty('beginner')">
                         <div class="difficulty-level" style="color: #4ecdc4;">🐣 초급 레벨</div>
-                        <div class="difficulty-title">쉬운 단어들 🌱</div>
                         <div class="difficulty-description">
                             동물, 색깔, 숫자 등<br>
                             기본적인 영어 단어들 😊
@@ -373,10 +413,16 @@
                     </div>
                     <div class="difficulty-btn intermediate" onclick="selectDifficulty('intermediate')">
                         <div class="difficulty-level" style="color: #45b7d1;">🐧 중급 레벨</div>
-                        <div class="difficulty-title">조금 어려운 단어들 🌿</div>
                         <div class="difficulty-description">
                             학교, 음식, 행동 등<br>
                             일상생활 영어 단어들 🤔
+                        </div>
+                    </div>
+                    <div class="difficulty-btn practical" onclick="selectDifficulty('practical')">
+                        <div class="difficulty-level" style="color: #ff6b9d;">🌟 실용 레벨</div>
+                        <div class="difficulty-description">
+                            인사말, 시간, 장소 등<br>
+                            실생활에서 자주 쓰는 단어들 💫
                         </div>
                     </div>
                 </div>
@@ -386,7 +432,7 @@
                 🚀 퀴즈 시작하기! 🚀
             </button>
             
-            <button class="vocab-btn" id="vocab-btn" onclick="showVocabulary()" style="display: none;">
+            <button class="vocab-btn" id="main-vocab-btn" onclick="showVocabulary()" style="display: none;">
                 📚 틀린 단어 복습하기 📚
             </button>
         </div>
@@ -406,7 +452,7 @@
 
             <div class="question-section">
                 <div class="question" id="question-text"></div>
-                <div class="question-type" id="question-type"></div>
+                <div class="question-type" id="question-type">🤔 다음 영어 단어의 뜻을 골라보세요!</div>
             </div>
 
             <div class="answers" id="answers-container"></div>
@@ -425,7 +471,7 @@
             </div>
             <p id="result-comment" style="font-size: 1.2em; color: #666; margin: 20px 0; line-height: 1.4;"></p>
             <button class="restart-btn" onclick="restartQuiz()">🔄 같은 난이도로 다시!</button>
-            <button class="vocab-btn" onclick="showVocabulary()">📚 틀린 단어 복습하기</button>
+            <button class="vocab-btn" id="result-vocab-btn" onclick="showVocabulary()">📚 틀린 단어 복습하기</button>
             <button class="back-btn" onclick="backToStart()">🏠 처음으로</button>
         </div>
 
@@ -438,120 +484,86 @@
     </div>
 
     <script>
-        // 초등학생용 영어 단어 데이터 (각 50개씩)
+        // 영어 단어 데이터
         const quizData = {
             beginner: [
-                // 동물 (10개)
+                // 동물
                 { word: "cat", meaning: "고양이 🐱", options: ["강아지 🐶", "고양이 🐱", "새 🐦", "물고기 🐟"], correct: 1 },
                 { word: "dog", meaning: "강아지 🐶", options: ["강아지 🐶", "고양이 🐱", "토끼 🐰", "곰 🐻"], correct: 0 },
                 { word: "bird", meaning: "새 🐦", options: ["물고기 🐟", "개구리 🐸", "새 🐦", "나비 🦋"], correct: 2 },
                 { word: "fish", meaning: "물고기 🐟", options: ["고래 🐋", "상어 🦈", "거북이 🐢", "물고기 🐟"], correct: 3 },
-                { word: "rabbit", meaning: "토끼 🐰", options: ["토끼 🐰", "다람쥐 🐿️", "햄스터 🐹", "생쥐 🐭"], correct: 0 },
-                { word: "bear", meaning: "곰 🐻", options: ["늑대 🐺", "곰 🐻", "호랑이 🐅", "사자 🦁"], correct: 1 },
-                { word: "lion", meaning: "사자 🦁", options: ["표범 🐆", "치타 🐆", "사자 🦁", "호랑이 🐅"], correct: 2 },
-                { word: "elephant", meaning: "코끼리 🐘", options: ["기린 🦒", "하마 🦛", "코뿔소 🦏", "코끼리 🐘"], correct: 3 },
-                { word: "monkey", meaning: "원숭이 🐵", options: ["원숭이 🐵", "고릴라 🦍", "침팬지 🐵", "오랑우탄 🦧"], correct: 0 },
-                { word: "horse", meaning: "말 🐴", options: ["당나귀 🫏", "말 🐴", "얼룩말 🦓", "소 🐄"], correct: 1 },
+                { word: "rabbit", meaning: "토끼 🐰", options: ["토끼 🐰", "다람쑤 🐿️", "햄스터 🐹", "생쥐 🐭"], correct: 0 },
                 
-                // 색깔 (10개)
+                // 색깔
                 { word: "red", meaning: "빨간색 🔴", options: ["파란색 🔵", "빨간색 🔴", "노란색 🟡", "초록색 🟢"], correct: 1 },
                 { word: "blue", meaning: "파란색 🔵", options: ["파란색 🔵", "보라색 🟣", "분홍색 🩷", "주황색 🟠"], correct: 0 },
                 { word: "yellow", meaning: "노란색 🟡", options: ["초록색 🟢", "갈색 🤎", "노란색 🟡", "검은색 ⚫"], correct: 2 },
                 { word: "green", meaning: "초록색 🟢", options: ["회색 🩶", "흰색 ⚪", "빨간색 🔴", "초록색 🟢"], correct: 3 },
                 { word: "black", meaning: "검은색 ⚫", options: ["검은색 ⚫", "흰색 ⚪", "회색 🩶", "갈색 🤎"], correct: 0 },
-                { word: "white", meaning: "흰색 ⚪", options: ["은색 🩶", "흰색 ⚪", "크림색 🟨", "베이지색 🟫"], correct: 1 },
-                { word: "pink", meaning: "분홍색 🩷", options: ["보라색 🟣", "빨간색 🔴", "분홍색 🩷", "주황색 🟠"], correct: 2 },
-                { word: "purple", meaning: "보라색 🟣", options: ["파란색 🔵", "분홍색 🩷", "빨간색 🔴", "보라색 🟣"], correct: 3 },
-                { word: "orange", meaning: "주황색 🟠", options: ["주황색 🟠", "노란색 🟡", "빨간색 🔴", "갈색 🤎"], correct: 0 },
-                { word: "brown", meaning: "갈색 🤎", options: ["검은색 ⚫", "갈색 🤎", "회색 🩶", "베이지색 🟫"], correct: 1 },
                 
-                // 숫자 (10개)
+                // 숫자
                 { word: "one", meaning: "하나 1️⃣", options: ["하나 1️⃣", "둘 2️⃣", "셋 3️⃣", "넷 4️⃣"], correct: 0 },
                 { word: "two", meaning: "둘 2️⃣", options: ["하나 1️⃣", "둘 2️⃣", "셋 3️⃣", "넷 4️⃣"], correct: 1 },
                 { word: "three", meaning: "셋 3️⃣", options: ["둘 2️⃣", "넷 4️⃣", "셋 3️⃣", "다섯 5️⃣"], correct: 2 },
                 { word: "four", meaning: "넷 4️⃣", options: ["셋 3️⃣", "다섯 5️⃣", "여섯 6️⃣", "넷 4️⃣"], correct: 3 },
                 { word: "five", meaning: "다섯 5️⃣", options: ["다섯 5️⃣", "여섯 6️⃣", "일곱 7️⃣", "여덟 8️⃣"], correct: 0 },
-                { word: "six", meaning: "여섯 6️⃣", options: ["다섯 5️⃣", "여섯 6️⃣", "일곱 7️⃣", "여덟 8️⃣"], correct: 1 },
-                { word: "seven", meaning: "일곱 7️⃣", options: ["여섯 6️⃣", "여덟 8️⃣", "일곱 7️⃣", "아홉 9️⃣"], correct: 2 },
-                { word: "eight", meaning: "여덟 8️⃣", options: ["일곱 7️⃣", "아홉 9️⃣", "열 🔟", "여덟 8️⃣"], correct: 3 },
-                { word: "nine", meaning: "아홉 9️⃣", options: ["아홉 9️⃣", "여덟 8️⃣", "열 🔟", "일곱 7️⃣"], correct: 0 },
-                { word: "ten", meaning: "열 🔟", options: ["아홉 9️⃣", "열 🔟", "열하나 1️⃣1️⃣", "열둘 1️⃣2️⃣"], correct: 1 },
                 
-                // 가족 (10개)
+                // 가족
                 { word: "mom", meaning: "엄마 👩", options: ["엄마 👩", "아빠 👨", "할머니 👵", "할아버지 👴"], correct: 0 },
                 { word: "dad", meaning: "아빠 👨", options: ["엄마 👩", "아빠 👨", "형/오빠 👦", "누나/언니 👧"], correct: 1 },
                 { word: "sister", meaning: "자매 👧", options: ["형제 👦", "엄마 👩", "자매 👧", "아빠 👨"], correct: 2 },
                 { word: "brother", meaning: "형제 👦", options: ["할아버지 👴", "할머니 👵", "자매 👧", "형제 👦"], correct: 3 },
                 { word: "baby", meaning: "아기 👶", options: ["아기 👶", "어린이 👧", "어른 👨", "할아버지 👴"], correct: 0 },
-                { word: "boy", meaning: "남자아이 👦", options: ["여자아이 👧", "남자아이 👦", "아기 👶", "어른 👨"], correct: 1 },
-                { word: "girl", meaning: "여자아이 👧", options: ["남자아이 👦", "아기 👶", "여자아이 👧", "어른 👩"], correct: 2 },
-                { word: "family", meaning: "가족 👨‍👩‍👧‍👦", options: ["친구 👥", "이웃 🏘️", "선생님 👨‍🏫", "가족 👨‍👩‍👧‍👦"], correct: 3 },
-                { word: "friend", meaning: "친구 👥", options: ["친구 👥", "가족 👨‍👩‍👧‍👦", "선생님 👨‍🏫", "의사 👨‍⚕️"], correct: 0 },
-                { word: "teacher", meaning: "선생님 👨‍🏫", options: ["학생 👨‍🎓", "선생님 👨‍🏫", "의사 👨‍⚕️", "요리사 👨‍🍳"], correct: 1 },
                 
-                // 기본 단어 (10개)
+                // 기본 단어
                 { word: "house", meaning: "집 🏠", options: ["학교 🏫", "병원 🏥", "집 🏠", "상점 🏪"], correct: 2 },
                 { word: "school", meaning: "학교 🏫", options: ["학교 🏫", "도서관 📚", "병원 🏥", "은행 🏦"], correct: 0 },
                 { word: "book", meaning: "책 📖", options: ["펜 ✏️", "책 📖", "종이 📄", "가방 🎒"], correct: 1 },
                 { word: "pen", meaning: "펜 ✏️", options: ["연필 ✏️", "지우개 🧹", "펜 ✏️", "자 📏"], correct: 2 },
                 { word: "car", meaning: "자동차 🚗", options: ["버스 🚌", "기차 🚆", "비행기 ✈️", "자동차 🚗"], correct: 3 },
-                { word: "ball", meaning: "공 ⚽", options: ["공 ⚽", "인형 🧸", "블록 🧱", "퍼즐 🧩"], correct: 0 },
-                { word: "toy", meaning: "장난감 🧸", options: ["음식 🍎", "장난감 🧸", "옷 👕", "신발 👟"], correct: 1 },
-                { word: "hat", meaning: "모자 👒", options: ["신발 👟", "양말 🧦", "모자 👒", "장갑 🧤"], correct: 2 },
-                { word: "bag", meaning: "가방 🎒", options: ["상자 📦", "병 🍼", "컵 🥤", "가방 🎒"], correct: 3 },
-                { word: "sun", meaning: "태양 ☀️", options: ["태양 ☀️", "달 🌙", "별 ⭐", "구름 ☁️"], correct: 0 }
+                
+                // 날씨
+                { word: "sun", meaning: "태양 ☀️", options: ["태양 ☀️", "달 🌙", "별 ⭐", "구름 ☁️"], correct: 0 },
+                { word: "hot", meaning: "더운 🔥", options: ["차가운 🧊", "더운 🔥", "따뜻한 🌡️", "시원한 😎"], correct: 1 },
+                { word: "cold", meaning: "추운 🧊", options: ["따뜻한 🌡️", "더운 🔥", "추운 🧊", "시원한 😎"], correct: 2 },
+                { word: "rain", meaning: "비 🌧️", options: ["눈 ❄️", "바람 💨", "햇빛 ☀️", "비 🌧️"], correct: 3 },
+                { word: "snow", meaning: "눈 ❄️", options: ["눈 ❄️", "비 🌧️", "구름 ☁️", "바람 💨"], correct: 0 },
+                
+                // 과일
+                { word: "apple", meaning: "사과 🍎", options: ["바나나 🍌", "사과 🍎", "오렌지 🍊", "포도 🍇"], correct: 1 },
+                { word: "banana", meaning: "바나나 🍌", options: ["사과 🍎", "배 🍐", "바나나 🍌", "딸기 🍓"], correct: 2 }
             ],
             
             intermediate: [
-                // 음식 (10개)
-                { word: "apple", meaning: "사과 🍎", options: ["바나나 🍌", "사과 🍎", "오렌지 🍊", "포도 🍇"], correct: 1 },
-                { word: "banana", meaning: "바나나 🍌", options: ["사과 🍎", "배 🍐", "바나나 🍌", "딸기 🍓"], correct: 2 },
-                { word: "orange", meaning: "오렌지 🍊", options: ["레몬 🍋", "라임 🟢", "자몽 🍊", "오렌지 🍊"], correct: 3 },
-                { word: "cake", meaning: "케이크 🎂", options: ["케이크 🎂", "쿠키 🍪", "도넛 🍩", "빵 🍞"], correct: 0 },
+                // 음식
                 { word: "bread", meaning: "빵 🍞", options: ["쌀 🍚", "빵 🍞", "면 🍜", "피자 🍕"], correct: 1 },
                 { word: "milk", meaning: "우유 🥛", options: ["물 💧", "주스 🧃", "우유 🥛", "커피 ☕"], correct: 2 },
                 { word: "water", meaning: "물 💧", options: ["차 🍵", "탄산음료 🥤", "주스 🧃", "물 💧"], correct: 3 },
                 { word: "rice", meaning: "쌀/밥 🍚", options: ["쌀/밥 🍚", "빵 🍞", "면 🍜", "감자 🥔"], correct: 0 },
                 { word: "egg", meaning: "달걀 🥚", options: ["치즈 🧀", "달걀 🥚", "버터 🧈", "요거트 🥛"], correct: 1 },
-                { word: "meat", meaning: "고기 🥩", options: ["생선 🐟", "야채 🥬", "고기 🥩", "과일 🍎"], correct: 2 },
                 
-                // 신체 부위 (10개)
+                // 신체 부위
                 { word: "head", meaning: "머리 👤", options: ["머리 👤", "얼굴 😊", "목 🦒", "어깨 💪"], correct: 0 },
                 { word: "eye", meaning: "눈 👁️", options: ["코 👃", "눈 👁️", "입 👄", "귀 👂"], correct: 1 },
                 { word: "nose", meaning: "코 👃", options: ["입 👄", "귀 👂", "코 👃", "턱 🦵"], correct: 2 },
                 { word: "mouth", meaning: "입 👄", options: ["이빨 🦷", "혀 👅", "목 🦒", "입 👄"], correct: 3 },
                 { word: "hand", meaning: "손 🤚", options: ["손 🤚", "발 🦶", "팔 💪", "다리 🦵"], correct: 0 },
-                { word: "foot", meaning: "발 🦶", options: ["손가락 👆", "발 🦶", "발가락 🦶", "무릎 🦵"], correct: 1 },
-                { word: "arm", meaning: "팔 💪", options: ["다리 🦵", "어깨 💪", "팔 💪", "등 🔄"], correct: 2 },
-                { word: "leg", meaning: "다리 🦵", options: ["팔 💪", "손 🤚", "발 🦶", "다리 🦵"], correct: 3 },
-                { word: "ear", meaning: "귀 👂", options: ["귀 👂", "눈 👁️", "코 👃", "입 👄"], correct: 0 },
-                { word: "hair", meaning: "머리카락 💇", options: ["눈썹 🤨", "머리카락 💇", "속눈썹 👁️", "수염 🧔"], correct: 1 },
                 
-                // 옷 (10개)
+                // 옷
                 { word: "shirt", meaning: "셔츠 👕", options: ["바지 👖", "치마 👗", "셔츠 👕", "재킷 🧥"], correct: 2 },
                 { word: "pants", meaning: "바지 👖", options: ["모자 👒", "신발 👟", "양말 🧦", "바지 👖"], correct: 3 },
                 { word: "dress", meaning: "원피스 👗", options: ["원피스 👗", "치마 👗", "블라우스 👚", "코트 🧥"], correct: 0 },
                 { word: "shoes", meaning: "신발 👟", options: ["양말 🧦", "신발 👟", "모자 👒", "장갑 🧤"], correct: 1 },
-                { word: "socks", meaning: "양말 🧦", options: ["속옷 👙", "스타킹 🦵", "양말 🧦", "벨트 👔"], correct: 2 },
-                { word: "jacket", meaning: "재킷 🧥", options: ["셔츠 👕", "바지 👖", "치마 👗", "재킷 🧥"], correct: 3 },
-                { word: "skirt", meaning: "치마 👗", options: ["치마 👗", "원피스 👗", "바지 👖", "반바지 🩳"], correct: 0 },
-                { word: "gloves", meaning: "장갑 🧤", options: ["양말 🧦", "장갑 🧤", "모자 👒", "스카프 🧣"], correct: 1 },
-                { word: "cap", meaning: "모자 🧢", options: ["헬멧 ⛑️", "선글라스 🕶️", "모자 🧢", "머리띠 👑"], correct: 2 },
-                { word: "belt", meaning: "벨트 👔", options: ["넥타이 👔", "시계 ⌚", "반지 💍", "벨트 👔"], correct: 3 },
+                { word: "hat", meaning: "모자 👒", options: ["헬멧 ⛑️", "선글라스 🕶️", "모자 👒", "머리띠 👑"], correct: 2 },
                 
-                // 학교 (10개)
+                // 학교
                 { word: "student", meaning: "학생 👨‍🎓", options: ["학생 👨‍🎓", "선생님 👨‍🏫", "교장선생님 👨‍💼", "의사 👨‍⚕️"], correct: 0 },
+                { word: "teacher", meaning: "선생님 👨‍🏫", options: ["학생 👨‍🎓", "선생님 👨‍🏫", "의사 👨‍⚕️", "요리사 👨‍🍳"], correct: 1 },
                 { word: "desk", meaning: "책상 🪑", options: ["의자 🪑", "책상 🪑", "칠판 📋", "창문 🪟"], correct: 1 },
                 { word: "chair", meaning: "의자 🪑", options: ["책상 🪑", "침대 🛏️", "의자 🪑", "소파 🛋️"], correct: 2 },
                 { word: "pencil", meaning: "연필 ✏️", options: ["펜 🖊️", "지우개 🧹", "자 📏", "연필 ✏️"], correct: 3 },
-                { word: "eraser", meaning: "지우개 🧹", options: ["지우개 🧹", "연필깎이 ✂️", "풀 🍯", "테이프 📏"], correct: 0 },
-                { word: "ruler", meaning: "자 📏", options: ["가위 ✂️", "자 📏", "스테이플러 📎", "클립 📎"], correct: 1 },
-                { word: "paper", meaning: "종이 📄", options: ["공책 📒", "파일 📁", "종이 📄", "봉투 ✉️"], correct: 2 },
-                { word: "crayon", meaning: "크레용 🖍️", options: ["붓 🖌️", "물감 🎨", "마커 🖊️", "크레용 🖍️"], correct: 3 },
-                { word: "homework", meaning: "숙제 📝", options: ["숙제 📝", "시험 📋", "수업 👨‍🏫", "휴식 😴"], correct: 0 },
-                { word: "lesson", meaning: "수업 📚", options: ["놀이 🎮", "수업 📚", "점심 🍽️", "청소 🧹"], correct: 1 },
                 
-                // 동작/행동 (10개)
+                // 동작
                 { word: "run", meaning: "달리다 🏃", options: ["걷다 🚶", "뛰다 🦘", "달리다 🏃", "앉다 🪑"], correct: 2 },
                 { word: "walk", meaning: "걷다 🚶", options: ["서다 🧍", "눕다 🛏️", "앉다 🪑", "걷다 🚶"], correct: 3 },
                 { word: "jump", meaning: "뛰다 🦘", options: ["뛰다 🦘", "굴리다 🎱", "던지다 🤾", "잡다 🤏"], correct: 0 },
@@ -561,7 +573,21 @@
                 { word: "drink", meaning: "마시다 🥤", options: ["마시다 🥤", "삼키다 😋", "씹다 😋", "맛보다 👅"], correct: 0 },
                 { word: "play", meaning: "놀다 🎮", options: ["공부하다 📚", "놀다 🎮", "일하다 💼", "쉬다 😴"], correct: 1 },
                 { word: "study", meaning: "공부하다 📚", options: ["놀다 🎮", "자다 😴", "공부하다 📚", "운동하다 🏃"], correct: 2 },
-                { word: "swim", meaning: "수영하다 🏊", options: ["달리다 🏃", "뛰다 🦘", "춤추다 💃", "수영하다 🏊"], correct: 3 }
+                { word: "swim", meaning: "수영하다 🏊", options: ["달리다 🏃", "뛰다 🦘", "춤추다 💃", "수영하다 🏊"], correct: 3 },
+                
+                // 감정
+                { word: "happy", meaning: "행복한 😊", options: ["슬픈 😢", "행복한 😊", "화난 😠", "무서운 😱"], correct: 1 },
+                { word: "sad", meaning: "슬픈 😢", options: ["기쁜 😄", "화난 😠", "슬픈 😢", "놀란 😲"], correct: 2 },
+                { word: "angry", meaning: "화난 😠", options: ["행복한 😊", "평온한 😌", "무서운 😱", "화난 😠"], correct: 3 },
+                { word: "excited", meaning: "신난 🤗", options: ["신난 🤗", "지친 😴", "슬픈 😢", "무서운 😱"], correct: 0 },
+                { word: "scared", meaning: "무서운 😱", options: ["용감한 💪", "무서운 😱", "행복한 😊", "평온한 😌"], correct: 1 },
+                
+                // 자연
+                { word: "tree", meaning: "나무 🌳", options: ["나무 🌳", "꽃 🌸", "풀 🌿", "돌 🪨"], correct: 0 },
+                { word: "flower", meaning: "꽃 🌸", options: ["잎사귀 🍃", "꽃 🌸", "가지 🌿", "뿌리 🌱"], correct: 1 },
+                { word: "grass", meaning: "풀 🌿", options: ["모래 🏖️", "돌 🪨", "풀 🌿", "물 💧"], correct: 2 },
+                { word: "mountain", meaning: "산 ⛰️", options: ["바다 🌊", "강 🏞️", "산 ⛰️", "사막 🏜️"], correct: 2 },
+                { word: "river", meaning: "강 🏞️", options: ["호수 🏞️", "강 🏞️", "바다 🌊", "연못 🏞️"], correct: 1 }
             ],
 
             practical: [
@@ -602,9 +628,6 @@
                 { word: "airport", meaning: "공항 ✈️", options: ["역 🚉", "버스 터미널 🚌", "항구 🚢", "공항 ✈️"], correct: 3 },
 
                 // 감정/상태 (10개)
-                { word: "happy", meaning: "행복해요 😊", options: ["슬퍼요 😢", "행복해요 😊", "화나요 😠", "무서워요 😨"], correct: 1 },
-                { word: "sad", meaning: "슬퍼요 😢", options: ["행복해요 😊", "슬퍼요 😢", "화나요 😠", "무서워요 😨"], correct: 1 },
-                { word: "angry", meaning: "화나요 😠", options: ["슬퍼요 😢", "화나요 😠", "무서워요 😨", "놀라요 😲"], correct: 1 },
                 { word: "tired", meaning: "피곤해요 😴", options: ["졸려요 😴", "피곤해요 😴", "배고파요 😋", "목말라요 💧"], correct: 1 },
                 { word: "hungry", meaning: "배고파요 😋", options: ["목말라요 💧", "배고파요 😋", "피곤해요 😴", "졸려요 😴"], correct: 1 },
                 { word: "thirsty", meaning: "목말라요 💧", options: ["배고파요 😋", "목말라요 💧", "피곤해요 😴", "더워요 🔥"], correct: 1 },
@@ -612,6 +635,9 @@
                 { word: "cold", meaning: "추워요 ❄️", options: ["더워요 🔥", "추워요 ❄️", "따뜻해요 🌞", "시원해요 💨"], correct: 1 },
                 { word: "sick", meaning: "아파요 🤒", options: ["피곤해요 😴", "아파요 🤒", "졸려요 😴", "배고파요 😋"], correct: 1 },
                 { word: "well", meaning: "괜찮아요 😊", options: ["아파요 🤒", "괜찮아요 😊", "피곤해요 😴", "슬퍼요 😢"], correct: 1 },
+                { word: "fine", meaning: "괜찮아요 😊", options: ["아파요 🤒", "괜찮아요 😊", "피곤해요 😴", "슬퍼요 😢"], correct: 1 },
+                { word: "okay", meaning: "괜찮아요 👍", options: ["아파요 🤒", "괜찮아요 👍", "피곤해요 😴", "슬퍼요 😢"], correct: 1 },
+                { word: "great", meaning: "훌륭해요 😎", options: ["나빠요 👎", "좋아요 👍", "훌륭해요 😎", "괜찮아요 😊"], correct: 2 },
 
                 // 기타 실용 단어 (10개)
                 { word: "money", meaning: "돈 💰", options: ["카드 💳", "돈 💰", "수표 📄", "동전 🪙"], correct: 1 },
@@ -627,13 +653,15 @@
             ]
         };
 
+        // 게임 상태 변수
         let currentDifficulty = null;
         let currentQuestion = 0;
         let score = 0;
         let selectedAnswer = null;
         let questions = [];
-        let wrongWords = []; // 틀린 단어들을 저장할 배열
+        let wrongWords = [];
 
+        // 난이도 선택 함수
         function selectDifficulty(difficulty) {
             // 이전 선택 해제
             document.querySelectorAll('.difficulty-btn').forEach(btn => {
@@ -648,110 +676,152 @@
             document.getElementById('start-btn').disabled = false;
         }
 
+        // 퀴즈 시작 함수
         function startQuiz() {
-            if (!currentDifficulty) return;
+            if (!currentDifficulty) {
+                alert('난이도를 선택해주세요!');
+                return;
+            }
             
-            // 선택된 난이도의 문제들을 섞어서 10개 선택
-            const allQuestions = [...quizData[currentDifficulty]];
-            questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 10);
-            
-            currentQuestion = 0;
-            score = 0;
-            wrongWords = []; // 틀린 단어 목록 초기화
-            
-            // 난이도 표시 업데이트
+            try {
+                // 선택된 난이도의 문제들을 섞어서 10개 선택
+                const allQuestions = [...quizData[currentDifficulty]];
+                questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 10);
+                
+                // 게임 상태 초기화
+                currentQuestion = 0;
+                score = 0;
+                wrongWords = [];
+                
+                // 난이도 표시 업데이트
+                updateDifficultyDisplay();
+                
+                // 화면 전환
+                showScreen('quiz-screen');
+                
+                // 첫 번째 문제 표시
+                showQuestion();
+            } catch (error) {
+                console.error('퀴즈 시작 중 오류:', error);
+                alert('퀴즈를 시작하는 중 오류가 발생했습니다.');
+            }
+        }
+
+        // 난이도 표시 업데이트 함수
+        function updateDifficultyDisplay() {
             const difficultyText = {
                 'beginner': '🐣 초급 레벨',
-                'intermediate': '🐧 중급 레벨'
+                'intermediate': '🐧 중급 레벨',
+                'practical': '🌟 실용 레벨'
             };
             
             const difficultyClass = {
                 'beginner': 'difficulty-beginner',
-                'intermediate': 'difficulty-intermediate'
+                'intermediate': 'difficulty-intermediate',
+                'practical': 'difficulty-practical'
             };
             
+            // 퀴즈 화면 난이도 표시
             const currentDifficultyBadge = document.getElementById('current-difficulty');
-            currentDifficultyBadge.textContent = difficultyText[currentDifficulty];
-            currentDifficultyBadge.className = `difficulty-badge ${difficultyClass[currentDifficulty]}`;
+            if (currentDifficultyBadge) {
+                currentDifficultyBadge.textContent = difficultyText[currentDifficulty];
+                currentDifficultyBadge.className = `difficulty-badge ${difficultyClass[currentDifficulty]}`;
+            }
             
-            document.getElementById('start-screen').classList.add('hidden');
-            document.getElementById('quiz-screen').classList.remove('hidden');
-            document.getElementById('result-screen').classList.add('hidden');
-            document.getElementById('vocabulary-screen').classList.add('hidden');
-            
-            showQuestion();
+            // 결과 화면 난이도 표시
+            const resultDifficultyBadge = document.getElementById('result-difficulty');
+            if (resultDifficultyBadge) {
+                resultDifficultyBadge.textContent = difficultyText[currentDifficulty];
+                resultDifficultyBadge.className = `difficulty-badge ${difficultyClass[currentDifficulty]}`;
+            }
         }
 
+        // 문제 표시 함수
         function showQuestion() {
-            const question = questions[currentQuestion];
-            selectedAnswer = null;
-            
-            // 문제 정보 업데이트
-            document.getElementById('current-question').textContent = currentQuestion + 1;
-            document.getElementById('total-questions').textContent = questions.length;
-            document.getElementById('current-score').textContent = score;
-            
-            // 진행률 바 업데이트
-            const progress = ((currentQuestion + 1) / questions.length) * 100;
-            document.getElementById('progress-fill').style.width = progress + '%';
-            
-            // 문제 표시
-            document.getElementById('question-text').textContent = question.word;
-            document.getElementById('question-type').textContent = '🤔 다음 영어 단어의 뜻을 골라보세요!';
-            
-            // 선택지 표시 (순서 섞기)
-            const answersContainer = document.getElementById('answers-container');
-            answersContainer.innerHTML = '';
-            
-            // 선택지 순서를 섞어서 정답 위치를 무작위로 만들기
-            const shuffledOptions = question.options.map((option, index) => ({
-                text: option,
-                isCorrect: index === question.correct
-            })).sort(() => Math.random() - 0.5);
-            
-            shuffledOptions.forEach((option, index) => {
-                const button = document.createElement('button');
-                button.className = 'answer-btn';
-                button.textContent = option.text;
-                button.onclick = () => selectAnswer(index, option.isCorrect);
-                answersContainer.appendChild(button);
-            });
-            
-            // 다음 버튼 숨기기
-            document.getElementById('next-btn').style.display = 'none';
+            try {
+                if (currentQuestion >= questions.length) {
+                    showResult();
+                    return;
+                }
+                
+                const question = questions[currentQuestion];
+                selectedAnswer = null;
+                
+                // 문제 정보 업데이트
+                document.getElementById('current-question').textContent = currentQuestion + 1;
+                document.getElementById('total-questions').textContent = questions.length;
+                document.getElementById('current-score').textContent = score;
+                
+                // 진행률 바 업데이트
+                const progress = ((currentQuestion + 1) / questions.length) * 100;
+                document.getElementById('progress-fill').style.width = progress + '%';
+                
+                // 문제 표시
+                document.getElementById('question-text').textContent = question.word;
+                
+                // 선택지 표시 (순서 섞기)
+                const answersContainer = document.getElementById('answers-container');
+                answersContainer.innerHTML = '';
+                
+                // 선택지 순서를 섞어서 정답 위치를 무작위로 만들기
+                const shuffledOptions = question.options.map((option, index) => ({
+                    text: option,
+                    isCorrect: index === question.correct
+                })).sort(() => Math.random() - 0.5);
+                
+                shuffledOptions.forEach((option, index) => {
+                    const button = document.createElement('button');
+                    button.className = 'answer-btn';
+                    button.textContent = option.text;
+                    button.onclick = () => selectAnswer(index, option.isCorrect);
+                    answersContainer.appendChild(button);
+                });
+                
+                // 다음 버튼 숨기기
+                document.getElementById('next-btn').style.display = 'none';
+            } catch (error) {
+                console.error('문제 표시 중 오류:', error);
+                alert('문제를 표시하는 중 오류가 발생했습니다.');
+            }
         }
 
+        // 답 선택 함수
         function selectAnswer(selectedIndex, isCorrect) {
             if (selectedAnswer !== null) return; // 이미 답을 선택했으면 무시
             
-            selectedAnswer = selectedIndex;
-            const buttons = document.querySelectorAll('.answer-btn');
-            const currentQuestionData = questions[currentQuestion];
-            
-            // 모든 버튼 비활성화
-            buttons.forEach(btn => btn.classList.add('disabled'));
-            
-            // 선택한 답 표시
-            if (isCorrect) {
-                buttons[selectedIndex].classList.add('correct');
-                score++;
-                document.getElementById('current-score').textContent = score;
-            } else {
-                buttons[selectedIndex].classList.add('wrong');
-                // 틀린 단어를 배열에 추가
-                wrongWords.push(currentQuestionData);
-                // 정답도 표시
-                buttons.forEach((btn, index) => {
-                    if (btn.textContent === currentQuestionData.meaning) {
-                        btn.classList.add('correct');
-                    }
-                });
+            try {
+                selectedAnswer = selectedIndex;
+                const buttons = document.querySelectorAll('.answer-btn');
+                const currentQuestionData = questions[currentQuestion];
+                
+                // 모든 버튼 비활성화
+                buttons.forEach(btn => btn.classList.add('disabled'));
+                
+                // 선택한 답 표시
+                if (isCorrect) {
+                    buttons[selectedIndex].classList.add('correct');
+                    score++;
+                    document.getElementById('current-score').textContent = score;
+                } else {
+                    buttons[selectedIndex].classList.add('wrong');
+                    // 틀린 단어를 배열에 추가
+                    wrongWords.push(currentQuestionData);
+                    // 정답도 표시
+                    buttons.forEach((btn, index) => {
+                        if (btn.textContent === currentQuestionData.meaning) {
+                            btn.classList.add('correct');
+                        }
+                    });
+                }
+                
+                // 다음 버튼 표시
+                document.getElementById('next-btn').style.display = 'block';
+            } catch (error) {
+                console.error('답 선택 중 오류:', error);
             }
-            
-            // 다음 버튼 표시
-            document.getElementById('next-btn').style.display = 'block';
         }
 
+        // 다음 문제로 이동 함수
         function nextQuestion() {
             currentQuestion++;
             
@@ -762,112 +832,147 @@
             }
         }
 
+        // 결과 표시 함수
         function showResult() {
-            document.getElementById('quiz-screen').classList.add('hidden');
-            document.getElementById('result-screen').classList.remove('hidden');
-            
-            const percentage = (score / questions.length) * 100;
-            let emoji, message, comment;
-            
-            // 초등학생 친화적인 메시지
-            if (percentage >= 90) {
-                emoji = "🏆";
-                message = "와! 정말 대단해요! 🌟";
-                comment = "영어 단어를 정말 잘 알고 있네요! 완벽해요! 🎉";
-            } else if (percentage >= 70) {
-                emoji = "🎉";
-                message = "잘했어요! 👏";
-                comment = "좋은 실력이에요! 조금만 더 연습하면 완벽할 거예요! 💪";
-            } else if (percentage >= 50) {
-                emoji = "😊";
-                message = "괜찮아요! 👍";
-                comment = "열심히 했어요! 더 많은 단어를 배워보세요! 📚";
-            } else {
-                emoji = "🤗";
-                message = "다시 도전해봐요! 💪";
-                comment = "괜찮아요! 영어는 계속 연습하면 늘어요! 화이팅! ✨";
-            }
-            
-            // 난이도 표시 업데이트
-            const difficultyText = {
-                'beginner': '🐣 초급 레벨',
-                'intermediate': '🐧 중급 레벨'
-            };
-            
-            const difficultyClass = {
-                'beginner': 'difficulty-beginner',
-                'intermediate': 'difficulty-intermediate'
-            };
-            
-            const resultDifficultyBadge = document.getElementById('result-difficulty');
-            resultDifficultyBadge.textContent = difficultyText[currentDifficulty];
-            resultDifficultyBadge.className = `difficulty-badge ${difficultyClass[currentDifficulty]}`;
-            
-            document.getElementById('result-emoji').textContent = emoji;
-            document.getElementById('result-message').textContent = message;
-            document.getElementById('final-score').textContent = score;
-            document.getElementById('result-comment').textContent = comment;
-            
-            // 틀린 단어가 있으면 단어장 버튼 표시
-            const vocabButtons = document.querySelectorAll('.vocab-btn');
-            if (wrongWords.length > 0) {
-                vocabButtons.forEach(btn => btn.style.display = 'inline-block');
-                document.getElementById('vocab-btn').style.display = 'inline-block';
-            } else {
-                vocabButtons.forEach(btn => btn.style.display = 'none');
-                document.getElementById('vocab-btn').style.display = 'none';
+            try {
+                showScreen('result-screen');
+                
+                const percentage = (score / questions.length) * 100;
+                let emoji, message, comment;
+                
+                // 초등학생 친화적인 메시지
+                if (percentage >= 90) {
+                    emoji = "🏆";
+                    message = "와! 정말 대단해요! 🌟";
+                    comment = "영어 단어를 정말 잘 알고 있네요! 완벽해요! 🎉";
+                } else if (percentage >= 70) {
+                    emoji = "🎉";
+                    message = "잘했어요! 👏";
+                    comment = "좋은 실력이에요! 조금만 더 연습하면 완벽할 거예요! 💪";
+                } else if (percentage >= 50) {
+                    emoji = "😊";
+                    message = "괜찮아요! 👍";
+                    comment = "열심히 했어요! 더 많은 단어를 배워보세요! 📚";
+                } else {
+                    emoji = "🤗";
+                    message = "다시 도전해봐요! 💪";
+                    comment = "괜찮아요! 영어는 계속 연습하면 늘어요! 화이팅! ✨";
+                }
+                
+                // 난이도 표시 업데이트
+                updateDifficultyDisplay();
+                
+                // 결과 표시
+                document.getElementById('result-emoji').textContent = emoji;
+                document.getElementById('result-message').textContent = message;
+                document.getElementById('final-score').textContent = score;
+                document.getElementById('result-comment').textContent = comment;
+                
+                // 틀린 단어가 있으면 단어장 버튼 표시
+                updateVocabButtonVisibility();
+            } catch (error) {
+                console.error('결과 표시 중 오류:', error);
+                alert('결과를 표시하는 중 오류가 발생했습니다.');
             }
         }
 
+        // 단어장 표시 함수
         function showVocabulary() {
-            document.getElementById('start-screen').classList.add('hidden');
-            document.getElementById('quiz-screen').classList.add('hidden');
-            document.getElementById('result-screen').classList.add('hidden');
-            document.getElementById('vocabulary-screen').classList.remove('hidden');
-            
-            const vocabularyList = document.getElementById('vocabulary-list');
-            
-            if (wrongWords.length === 0) {
-                vocabularyList.innerHTML = `
-                    <div style="text-align: center; padding: 40px; font-size: 1.3em; color: #666;">
-                        🎉 축하해요! 🎉<br><br>
-                        틀린 단어가 없어요!<br>
-                        정말 잘했어요! ✨
-                    </div>
-                `;
-            } else {
-                vocabularyList.innerHTML = wrongWords.map(word => `
-                    <div class="vocab-item">
-                        <div class="vocab-word">${word.word}</div>
-                        <div class="vocab-meaning">${word.meaning}</div>
-                    </div>
-                `).join('');
+            try {
+                showScreen('vocabulary-screen');
+                
+                const vocabularyList = document.getElementById('vocabulary-list');
+                
+                if (wrongWords.length === 0) {
+                    vocabularyList.innerHTML = `
+                        <div style="text-align: center; padding: 40px; font-size: 1.3em; color: #666;">
+                            🎉 축하해요! 🎉<br><br>
+                            틀린 단어가 없어요!<br>
+                            정말 잘했어요! ✨
+                        </div>
+                    `;
+                } else {
+                    vocabularyList.innerHTML = wrongWords.map(word => `
+                        <div class="vocab-item">
+                            <div class="vocab-word">${word.word}</div>
+                            <div class="vocab-meaning">${word.meaning}</div>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('단어장 표시 중 오류:', error);
+                alert('단어장을 표시하는 중 오류가 발생했습니다.');
             }
         }
 
+        // 단어장 버튼 표시 업데이트 함수
+        function updateVocabButtonVisibility() {
+            const vocabButtons = [
+                document.getElementById('main-vocab-btn'),
+                document.getElementById('result-vocab-btn')
+            ];
+            
+            vocabButtons.forEach(btn => {
+                if (btn) {
+                    btn.style.display = wrongWords.length > 0 ? 'inline-block' : 'none';
+                }
+            });
+        }
+
+        // 화면 전환 함수
+        function showScreen(screenId) {
+            const screens = ['start-screen', 'quiz-screen', 'result-screen', 'vocabulary-screen'];
+            screens.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    if (id === screenId) {
+                        element.classList.remove('hidden');
+                    } else {
+                        element.classList.add('hidden');
+                    }
+                }
+            });
+        }
+
+        // 퀴즈 재시작 함수
         function restartQuiz() {
             startQuiz();
         }
 
+        // 시작 화면으로 돌아가기 함수
         function backToStart() {
-            currentDifficulty = null;
-            document.querySelectorAll('.difficulty-btn').forEach(btn => {
-                btn.classList.remove('selected');
-            });
-            document.getElementById('start-btn').disabled = true;
-            
-            // 틀린 단어가 있으면 단어장 버튼 표시
-            if (wrongWords.length > 0) {
-                document.getElementById('vocab-btn').style.display = 'inline-block';
-            } else {
-                document.getElementById('vocab-btn').style.display = 'none';
+            try {
+                // 난이도 선택 초기화
+                currentDifficulty = null;
+                document.querySelectorAll('.difficulty-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+                document.getElementById('start-btn').disabled = true;
+                
+                // 단어장 버튼 표시 업데이트
+                updateVocabButtonVisibility();
+                
+                // 시작 화면 표시
+                showScreen('start-screen');
+            } catch (error) {
+                console.error('시작 화면 이동 중 오류:', error);
             }
-            
-            document.getElementById('start-screen').classList.remove('hidden');
-            document.getElementById('quiz-screen').classList.add('hidden');
-            document.getElementById('result-screen').classList.add('hidden');
-            document.getElementById('vocabulary-screen').classList.add('hidden');
         }
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                // 초기 화면 설정
+                showScreen('start-screen');
+                
+                // 단어장 버튼 숨김
+                updateVocabButtonVisibility();
+                
+                console.log('영어 단어 퀴즈 앱이 성공적으로 로드되었습니다!');
+            } catch (error) {
+                console.error('앱 초기화 중 오류:', error);
+            }
+        });
     </script>
 </body>
 </html>
