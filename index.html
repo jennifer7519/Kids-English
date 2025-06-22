@@ -562,6 +562,68 @@
                 { word: "play", meaning: "놀다 🎮", options: ["공부하다 📚", "놀다 🎮", "일하다 💼", "쉬다 😴"], correct: 1 },
                 { word: "study", meaning: "공부하다 📚", options: ["놀다 🎮", "자다 😴", "공부하다 📚", "운동하다 🏃"], correct: 2 },
                 { word: "swim", meaning: "수영하다 🏊", options: ["달리다 🏃", "뛰다 🦘", "춤추다 💃", "수영하다 🏊"], correct: 3 }
+            ],
+
+            practical: [
+                // 일상생활 필수 단어 (10개)
+                { word: "hello", meaning: "안녕하세요 👋", options: ["안녕하세요 👋", "안녕히 가세요 👋", "고마워요 🙏", "미안해요 😔"], correct: 0 },
+                { word: "thank you", meaning: "고마워요 🙏", options: ["안녕하세요 👋", "고마워요 🙏", "미안해요 😔", "잘 있어요 👋"], correct: 1 },
+                { word: "sorry", meaning: "미안해요 😔", options: ["고마워요 🙏", "미안해요 😔", "안녕하세요 👋", "잘 있어요 👋"], correct: 1 },
+                { word: "please", meaning: "부탁해요 🙏", options: ["고마워요 🙏", "미안해요 😔", "부탁해요 🙏", "안녕하세요 👋"], correct: 2 },
+                { word: "yes", meaning: "네/예 ✅", options: ["아니요 ❌", "네/예 ✅", "모르겠어요 🤷", "그래요 👍"], correct: 1 },
+                { word: "no", meaning: "아니요 ❌", options: ["네/예 ✅", "아니요 ❌", "그래요 👍", "모르겠어요 🤷"], correct: 1 },
+                { word: "good", meaning: "좋아요 👍", options: ["나빠요 👎", "좋아요 👍", "괜찮아요 😊", "멋져요 😎"], correct: 1 },
+                { word: "bad", meaning: "나빠요 👎", options: ["좋아요 👍", "나빠요 👎", "괜찮아요 😊", "멋져요 😎"], correct: 1 },
+                { word: "big", meaning: "커요 📏", options: ["작아요 📏", "커요 📏", "길어요 📏", "짧아요 📏"], correct: 1 },
+                { word: "small", meaning: "작아요 📏", options: ["커요 📏", "작아요 📏", "길어요 📏", "짧아요 📏"], correct: 1 },
+
+                // 시간 관련 (10개)
+                { word: "today", meaning: "오늘 📅", options: ["어제 📅", "오늘 📅", "내일 📅", "이번 주 📅"], correct: 1 },
+                { word: "tomorrow", meaning: "내일 📅", options: ["오늘 📅", "어제 📅", "내일 📅", "다음 주 📅"], correct: 2 },
+                { word: "yesterday", meaning: "어제 📅", options: ["어제 📅", "오늘 📅", "내일 📅", "지난 주 📅"], correct: 0 },
+                { word: "morning", meaning: "아침 🌅", options: ["아침 🌅", "점심 🌞", "저녁 🌆", "밤 🌙"], correct: 0 },
+                { word: "afternoon", meaning: "오후 🌞", options: ["아침 🌅", "점심 🌞", "오후 🌞", "저녁 🌆"], correct: 2 },
+                { word: "evening", meaning: "저녁 🌆", options: ["오후 🌞", "저녁 🌆", "밤 🌙", "새벽 🌅"], correct: 1 },
+                { word: "night", meaning: "밤 🌙", options: ["저녁 🌆", "밤 🌙", "새벽 🌅", "아침 🌅"], correct: 1 },
+                { word: "week", meaning: "주 📅", options: ["일 📅", "주 📅", "월 📅", "년 📅"], correct: 1 },
+                { word: "month", meaning: "달 📅", options: ["주 📅", "월 📅", "달 📅", "년 📅"], correct: 2 },
+                { word: "year", meaning: "년 📅", options: ["월 📅", "달 📅", "년 📅", "계절 🌸"], correct: 2 },
+
+                // 장소 관련 (10개)
+                { word: "home", meaning: "집 🏠", options: ["학교 🏫", "집 🏠", "병원 🏥", "상점 🏪"], correct: 1 },
+                { word: "store", meaning: "상점 🏪", options: ["은행 🏦", "상점 🏪", "우체국 📮", "도서관 📚"], correct: 1 },
+                { word: "park", meaning: "공원 🌳", options: ["놀이터 🎠", "공원 🌳", "운동장 ⚽", "정원 🌸"], correct: 1 },
+                { word: "hospital", meaning: "병원 🏥", options: ["약국 💊", "병원 🏥", "치과 🦷", "의원 🏥"], correct: 1 },
+                { word: "bank", meaning: "은행 🏦", options: ["우체국 📮", "은행 🏦", "상점 🏪", "도서관 📚"], correct: 1 },
+                { word: "library", meaning: "도서관 📚", options: ["학교 🏫", "도서관 📚", "서점 📖", "박물관 🏛️"], correct: 1 },
+                { word: "restaurant", meaning: "식당 🍽️", options: ["카페 ☕", "식당 🍽️", "패스트푸드 🍔", "음식점 🍜"], correct: 1 },
+                { word: "cafe", meaning: "카페 ☕", options: ["식당 🍽️", "카페 ☕", "베이커리 🥖", "아이스크림 가게 🍦"], correct: 1 },
+                { word: "station", meaning: "역 🚉", options: ["버스 정류장 🚌", "지하철역 🚇", "역 🚉", "공항 ✈️"], correct: 2 },
+                { word: "airport", meaning: "공항 ✈️", options: ["역 🚉", "버스 터미널 🚌", "항구 🚢", "공항 ✈️"], correct: 3 },
+
+                // 감정/상태 (10개)
+                { word: "happy", meaning: "행복해요 😊", options: ["슬퍼요 😢", "행복해요 😊", "화나요 😠", "무서워요 😨"], correct: 1 },
+                { word: "sad", meaning: "슬퍼요 😢", options: ["행복해요 😊", "슬퍼요 😢", "화나요 😠", "무서워요 😨"], correct: 1 },
+                { word: "angry", meaning: "화나요 😠", options: ["슬퍼요 😢", "화나요 😠", "무서워요 😨", "놀라요 😲"], correct: 1 },
+                { word: "tired", meaning: "피곤해요 😴", options: ["졸려요 😴", "피곤해요 😴", "배고파요 😋", "목말라요 💧"], correct: 1 },
+                { word: "hungry", meaning: "배고파요 😋", options: ["목말라요 💧", "배고파요 😋", "피곤해요 😴", "졸려요 😴"], correct: 1 },
+                { word: "thirsty", meaning: "목말라요 💧", options: ["배고파요 😋", "목말라요 💧", "피곤해요 😴", "더워요 🔥"], correct: 1 },
+                { word: "hot", meaning: "더워요 🔥", options: ["추워요 ❄️", "더워요 🔥", "따뜻해요 🌞", "시원해요 💨"], correct: 1 },
+                { word: "cold", meaning: "추워요 ❄️", options: ["더워요 🔥", "추워요 ❄️", "따뜻해요 🌞", "시원해요 💨"], correct: 1 },
+                { word: "sick", meaning: "아파요 🤒", options: ["피곤해요 😴", "아파요 🤒", "졸려요 😴", "배고파요 😋"], correct: 1 },
+                { word: "well", meaning: "괜찮아요 😊", options: ["아파요 🤒", "괜찮아요 😊", "피곤해요 😴", "슬퍼요 😢"], correct: 1 },
+
+                // 기타 실용 단어 (10개)
+                { word: "money", meaning: "돈 💰", options: ["카드 💳", "돈 💰", "수표 📄", "동전 🪙"], correct: 1 },
+                { word: "phone", meaning: "전화 📱", options: ["컴퓨터 💻", "전화 📱", "태블릿 📱", "TV 📺"], correct: 1 },
+                { word: "computer", meaning: "컴퓨터 💻", options: ["전화 📱", "컴퓨터 💻", "태블릿 📱", "노트북 💻"], correct: 1 },
+                { word: "TV", meaning: "TV 📺", options: ["라디오 📻", "TV 📺", "컴퓨터 💻", "전화 📱"], correct: 1 },
+                { word: "music", meaning: "음악 🎵", options: ["노래 🎤", "음악 🎵", "춤 💃", "영화 🎬"], correct: 1 },
+                { word: "game", meaning: "게임 🎮", options: ["놀이 🎠", "게임 🎮", "스포츠 ⚽", "퍼즐 🧩"], correct: 1 },
+                { word: "picture", meaning: "사진 📸", options: ["그림 🎨", "사진 📸", "카메라 📷", "앨범 📚"], correct: 1 },
+                { word: "door", meaning: "문 🚪", options: ["창문 🪟", "문 🚪", "벽 🧱", "천장 🏠"], correct: 1 },
+                { word: "window", meaning: "창문 🪟", options: ["문 🚪", "창문 🪟", "벽 🧱", "바닥 🏠"], correct: 1 },
+                { word: "key", meaning: "열쇠 🔑", options: ["자물쇠 🔒", "열쇠 🔑", "문 🚪", "상자 📦"], correct: 1 }
             ]
         };
 
